@@ -56,7 +56,7 @@
         let mapped = grist.mapColumnNames(records);
         if (mapped) {
           // mJson = mapped Json from mapped column
-          let mPerfs = mapped.map(({ Perf,KPI }) => ({ Ecart_Objectif_,Indicateur }));
+          let mPerfs = mapped.map(({ Perf,KPI }) => ({ Perf,KPI }));
           // let mTargets = mapped.map(({ Target, Date }) => ({ Target, Date }));
           // let mMeans = mapped.map(({ Mean, Date }) => ({ Mean, Date }));
           // sorting by Date
