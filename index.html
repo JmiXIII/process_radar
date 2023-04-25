@@ -15,7 +15,7 @@
     <script>
       // Wait for the Grist API to be ready
       grist.ready({
-        columns: ["Date", "Result", "Target","Mean"],
+        columns: ["Perf","KPI"],
         requiredAccess: "read table",
       });
 
@@ -56,43 +56,43 @@
         let mapped = grist.mapColumnNames(records);
         if (mapped) {
           // mJson = mapped Json from mapped column
-          let mResults = mapped.map(({ Result, Date }) => ({ Result, Date }));
-          let mTargets = mapped.map(({ Target, Date }) => ({ Target, Date }));
-          let mMeans = mapped.map(({ Mean, Date }) => ({ Mean, Date }));
+          let mPerfs = mapped.map(({ Ecart_Objectif_,Indicateur }) => ({ Perf,KPI }));
+          // let mTargets = mapped.map(({ Target, Date }) => ({ Target, Date }));
+          // let mMeans = mapped.map(({ Mean, Date }) => ({ Mean, Date }));
           // sorting by Date
-          mTargets.sort((a, b) => {
-            return a.Date - b.Date;
-          });
-          mMeans.sort((a, b) => {
-            return a.Date-b.Date;
-          });
+          // mTargets.sort((a, b) => {
+          //   return a.Date - b.Date;
+          // });
+          // mMeans.sort((a, b) => {
+          //   return a.Date-b.Date;
+          // });
 
-          let traceResult = {
-            x: mResults.map((obj) => obj.Date),
-            y: mResults.map((obj) => obj.Result),
-            type: "bar",
-            name: "Résultats",
+          let tracePerf = {
+            r: mPerfs.map((obj) => obj.Perf),
+            ytheta: mResults.map((obj) => obj.KPI),
+            type: "scatterpolar",
+            name: "Performance KPI",
             opacity: 0.7,
             marker: {
               color: "rgba(184,184,184,0.6)",
             },
           };
-          let traceTarget = {
-            x: mTargets.map((obj) => obj.Date),
-            y: mTargets.map((obj) => obj.Target),
-            type: "scatter",
-            name: "Objectif",
-          };
+          // let traceTarget = {
+          //   x: mTargets.map((obj) => obj.Date),
+          //   y: mTargets.map((obj) => obj.Target),
+          //   type: "scatter",
+          //   name: "Objectif",
+          // };
 
-          let traceMean = {
-            x: mMeans.map((obj) => obj.Date),
-            y: mMeans.map((obj) => obj.Mean),
-            type: "line",
-            name: "12 Mois Glissants",
-          };
+          // let traceMean = {
+          //   x: mMeans.map((obj) => obj.Date),
+          //   y: mMeans.map((obj) => obj.Mean),
+          //   type: "line",
+          //   name: "12 Mois Glissants",
+          // };
 
 
-          let data = [traceResult, traceTarget, traceMean];
+          let data = [tracePerf];
           Plotly.newPlot("myDiv", data, layout, config);
         } else {
           // Helper returned a null value. It means that not all
