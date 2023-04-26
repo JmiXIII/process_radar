@@ -64,13 +64,13 @@
           // mJson = mapped Json from mapped column
           let mPerfs = mapped.map(({ Perf, KPI }) => ({ Perf, KPI }));
 
-          let tracePerf = {
-            x: mPerfs.map((obj) => obj.Perf),
-            y: mPerfs.map((obj) => obj.KPI),
-            type: "bar",
-            name: "Performance KPI",
-            orientation: "h",
-          };
+          // let tracePerf = {
+          //   x: mPerfs.map((obj) => obj.Perf),
+          //   y: mPerfs.map((obj) => obj.KPI),
+          //   type: "bar",
+          //   name: "Performance KPI",
+          //   orientation: "h",
+          // };
 
           let data = [];
 
@@ -79,8 +79,8 @@
             let trace = {
               x: [mPerf.Perf],
               y: [mPerf.KPI],
-              xaxis: "x"+i,
-              yaxis: "y"+i,
+              xaxis: "x" + i,
+              yaxis: "y" + i,
               type: "bar",
               name: "Performance KPI",
               orientation: "h",
@@ -90,7 +90,7 @@
           }
 
           var layout = {
-            grid: { rows: 3, columns: 2, pattern: "independent" },
+            grid: { rows: 9, columns: 1, pattern: "independent" },
           };
 
           Plotly.newPlot("myDiv", data, layout, config);
