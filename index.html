@@ -74,11 +74,11 @@
 
           let data = [];
 
-          for (const kpi in mPerfs) {
+          for (const mPerf in mPerfs) {
             let i = 0;
             let trace = {
-              x: mPerfs.map((obj) => obj.Perf),
-              y: mPerfs.map((obj) => obj.KPI),
+              x: mPerf.map((obj) => obj.Perf),
+              y: mPerf.map((obj) => obj.KPI),
               xaxis: i,
               yaxis: i,
               type: "bar",
