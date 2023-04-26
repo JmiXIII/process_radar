@@ -74,19 +74,19 @@
 
           let data = [];
 
-          for (let mPerf in mPerfs) {
+          for (let mPerf of mPerfs) {
             let i = 0;
             let trace = {
-              x: mPerf.map((obj) => obj.Perf),
-              y: mPerf.map((obj) => obj.KPI),
-              xaxis: i,
-              yaxis: i,
+              x: [mPerf.Perf],
+              y: [mPerf.KPI],
+              xaxis: "x"+i,
+              yaxis: "y"+i,
               type: "bar",
               name: "Performance KPI",
               orientation: "h",
             };
             data.push(trace);
-            i++ == 1;
+            i++;
           }
 
           var layout = {
