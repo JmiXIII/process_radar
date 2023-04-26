@@ -25,7 +25,7 @@
       // Set the height and width of the Plotly chart to match the iframe
       const layout = {
         title: {
-          automargin: true,
+          // automargin: true,
         },
         legend: {
           xanchor: "right",
@@ -56,11 +56,11 @@
       grist.onRecords(function (records, mappings) {
         let mapped = grist.mapColumnNames(records);
         console.log(mapped);
-        document.getElementById("mapped").innerHTML = JSON.stringify(
-          mapped,
-          null,
-          2
-        );
+        // document.getElementById("mapped").innerHTML = JSON.stringify(
+        //   mapped,
+        //   null,
+        //   2
+        // );
         if (mapped) {
           // mJson = mapped Json from mapped column
           let mPerfs = mapped.map(({ Perf, KPI }) => ({ Perf, KPI }));
@@ -97,29 +97,6 @@
           console.error("Please map all columns");
         }
       });
-
-      //       var trace0 = {
-      //   type: 'bar',
-      //   name:'results',
-      //   x: [20, 18, 16, 4, 2],
-      //   y: ['TRS','Tx de service','NC','CA','CA_global'],
-      //   width: [0.5, 0.5, 0.5, 0.5, 0.5],
-      //     orientation: 'h',
-      // }
-
-      // var trace1 = {
-      //   type: 'bar',
-      //   name : 'target',
-      //   x: [12,12,12,12,12],
-      //   y: ['TRS','Tx de service','NC','CA','CA_global'],
-      //   width: [0.25, 0.25, 0.25, 0.25, 0.25],
-      //     orientation: 'h',
-      // }
-      // var data = [trace0, trace1]
-
-      // var layout = {barmode: 'overlay'};
-
-      // Plotly.newPlot('myDiv', data,layout);
     </script>
   </body>
 </html>
