@@ -10,8 +10,7 @@
 
   <body>
     <!-- Create a container element for the chart -->
-    <div id="myDiv" style="position: relative"></div>
-    <div id="mapped">mapping column</div>
+    <div id="myDiv" style="position: relative; height: 100vh"></div>
 
     <script>
       // Wait for the Grist API to be ready
@@ -76,18 +75,18 @@
           let data = [];
 
           for (const kpi in mPerfs) {
-            let i=0;
+            let i = 0;
             let trace = {
               x: mPerfs.map((obj) => obj.Perf),
               y: mPerfs.map((obj) => obj.KPI),
-              xaxis:i,
-              yaxis:i,
+              xaxis: i,
+              yaxis: i,
               type: "bar",
               name: "Performance KPI",
               orientation: "h",
             };
             data.push(trace);
-            i++==1;
+            i++ == 1;
           }
 
           var layout = {
