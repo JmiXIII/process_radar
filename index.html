@@ -11,6 +11,7 @@
   <body>
     <!-- Create a container element for the chart -->
     <div id="myDiv" style="position: relative"></div>
+    <div id="mapped">mapping column</div>
 
     <script>
       // Wait for the Grist API to be ready
@@ -54,19 +55,11 @@
       // When a new record is selected in the Grist table, render a chart based on its data
       grist.onRecords(function (records, mappings) {
         let mapped = grist.mapColumnNames(records);
+        console.log(mapped);
+        document.getElementById('mapped').innerHTML = JSON.stringify(mapped, null, 2);
         if (mapped) {
           // mJson = mapped Json from mapped column
           let mPerfs = mapped.map(({ Perf,KPI }) => ({ Perf,KPI }));
-          // let mTargets = mapped.map(({ Target, Date }) => ({ Target, Date }));
-          // let mMeans = mapped.map(({ Mean, Date }) => ({ Mean, Date }));
-          // sorting by Date
-          // mTargets.sort((a, b) => {
-          //   return a.Date - b.Date;
-          // });
-          // mMeans.sort((a, b) => {
-          //   return a.Date-b.Date;
-          // });
-
           let tracePerf = {
             x: mPerfs.map((obj) => obj.Perf),
             y: mPerfs.map((obj) => obj.KPI),
@@ -74,19 +67,6 @@
             name: "Performance KPI",
             orientation:'h',
           };
-          // let traceTarget = {
-          //   x: mTargets.map((obj) => obj.Date),
-          //   y: mTargets.map((obj) => obj.Target),
-          //   type: "scatter",
-          //   name: "Objectif",
-          // };
-
-          // let traceMean = {
-          //   x: mMeans.map((obj) => obj.Date),
-          //   y: mMeans.map((obj) => obj.Mean),
-          //   type: "line",
-          //   name: "12 Mois Glissants",
-          // };
 
 
           let data = [tracePerf];
