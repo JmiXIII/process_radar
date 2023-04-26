@@ -54,7 +54,6 @@
       // When a new record is selected in the Grist table, render a chart based on its data
       grist.onRecords(function (records, mappings) {
         let mapped = grist.mapColumnNames(records);
-        console.log(mapped);
         // document.getElementById("mapped").innerHTML = JSON.stringify(
         //   mapped,
         //   null, /
@@ -80,6 +79,8 @@
             data.push(trace);
             i++;
           }
+
+          console.log(data)
 
           var layout = {
             grid: { rows: 9, columns: 1, pattern: "independent" },
