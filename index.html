@@ -22,29 +22,29 @@
       // const plotDiv = document.getElementById("myDiv");
 
       // Set the height and width of the Plotly chart to match the iframe
-      const layout = {
-        title: {
-          // automargin: true,
-        },
-        legend: {
-          xanchor: "right",
-          yanchor: "top",
-          bgcolor: "rgba(0,0,0,0.15)",
-          font: {
-            size: 10,
-          },
-        },
-        // autosize: true,
-        yaxis: {
-          tickmode: "auto",
-        },
-        // margin: {
-        //   l: 30,
-        //   r: 5,
-        //   t: 5,
-        //   pad: 0,
-        // },
-      };
+      // const layout = {
+      //   title: {
+      //     // automargin: true,
+      //   },
+      //   legend: {
+      //     xanchor: "right",
+      //     yanchor: "top",
+      //     bgcolor: "rgba(0,0,0,0.15)",
+      //     font: {
+      //       size: 10,
+      //     },
+      //   },
+      //   // autosize: true,
+      //   yaxis: {
+      //     tickmode: "auto",
+      //   },
+      //   // margin: {
+      //   //   l: 30,
+      //   //   r: 5,
+      //   //   t: 5,
+      //   //   pad: 0,
+      //   // },
+      // };
 
       const config = {
         displayModeBar: false, // this is the line that hides the bar.
@@ -85,7 +85,7 @@
             grid: { rows: 9, columns: 1, pattern: "independent" },
           };
 
-        Plotly.newPlot("myDiv", [data]);
+        Plotly.newPlot("myDiv", data);
         } else {
           // Helper returned a null value. It means that not all
           // required columns were mapped.
