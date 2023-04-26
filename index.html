@@ -19,7 +19,7 @@
         requiredAccess: "read table",
       });
 
-      const plotDiv = document.getElementById("myDiv");
+      // const plotDiv = document.getElementById("myDiv");
 
       // Set the height and width of the Plotly chart to match the iframe
       const layout = {
@@ -64,14 +64,6 @@
           // mJson = mapped Json from mapped column
           let mPerfs = mapped.map(({ Perf, KPI }) => ({ Perf, KPI }));
 
-          // let tracePerf = {
-          //   x: mPerfs.map((obj) => obj.Perf),
-          //   y: mPerfs.map((obj) => obj.KPI),
-          //   type: "bar",
-          //   name: "Performance KPI",
-          //   orientation: "h",
-          // };
-
           let data = [];
 
           for (let mPerf of mPerfs) {
@@ -93,7 +85,7 @@
             grid: { rows: 9, columns: 1, pattern: "independent" },
           };
 
-          Plotly.newPlot("myDiv", data, layout, config);
+        Plotly.newPlot("myDiv", [data]);
         } else {
           // Helper returned a null value. It means that not all
           // required columns were mapped.
