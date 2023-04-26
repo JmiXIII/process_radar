@@ -68,10 +68,11 @@
           // });
 
           let tracePerf = {
-            r: mPerfs.map((obj) => obj.Perf),
-            theta: mPerfs.map((obj) => obj.KPI),
-            type: "scatterpolar",
+            x: mPerfs.map((obj) => obj.Perf),
+            y: mPerfs.map((obj) => obj.KPI),
+            type: "bar",
             name: "Performance KPI",
+            orientation:'h',
           };
           // let traceTarget = {
           //   x: mTargets.map((obj) => obj.Date),
@@ -96,6 +97,33 @@
           console.error("Please map all columns");
         }
       });
+
+
+//       var trace0 = {
+//   type: 'bar',
+//   name:'results',
+//   x: [20, 18, 16, 4, 2],
+//   y: ['TRS','Tx de service','NC','CA','CA_global'],
+//   width: [0.5, 0.5, 0.5, 0.5, 0.5],
+//     orientation: 'h',
+// }
+
+// var trace1 = {
+//   type: 'bar',
+//   name : 'target',
+//   x: [12,12,12,12,12],
+//   y: ['TRS','Tx de service','NC','CA','CA_global'],
+//   width: [0.25, 0.25, 0.25, 0.25, 0.25],
+//     orientation: 'h',
+// }
+// var data = [trace0, trace1]
+
+// var layout = {barmode: 'overlay'};
+
+// Plotly.newPlot('myDiv', data,layout);
+
+
+      
     </script>
   </body>
 </html>
