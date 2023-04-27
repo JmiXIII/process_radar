@@ -15,7 +15,7 @@
     <script>
       // Wait for the Grist API to be ready
       grist.ready({
-        columns: ["Perf", "KPI", "Target"],
+        columns: ["Perf", "KPI", "Target",'Color'],
         requiredAccess: "read table",
       });
 
@@ -61,10 +61,11 @@
         // );
         if (mapped) {
           // mJson = mapped Json from mapped column
-          let mPerfs = mapped.map(({ KPI, Perf, Target }) => ({
+          let mPerfs = mapped.map(({ KPI, Perf, Target, Color}) => ({
             KPI,
             Perf,
             Target,
+            color,
           }));
 
           let data = [];
@@ -78,8 +79,9 @@
               yaxis: "y" + i,
               type: "bar",
               orientation: "h",
+              width:0.5,
               marker: {
-                color: "rgba(184,184,184,0.6)",
+                color: mPerf.Color,
               },
             };
             let targetTrace = {
@@ -89,7 +91,6 @@
               yaxis: "y" + i,
               type: "bar",
               orientation: "h",
-              width:0.5,
               marker: {
                 color: "rgba(184,184,184,0.6)",
               },
