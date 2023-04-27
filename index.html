@@ -93,7 +93,7 @@
                 color: "rgba(0,184,184,0.6)",
               },
             };
-            data.push(perfTrace,targetTrace);
+            data.push(perfTrace, targetTrace);
             i++;
           }
 
@@ -101,6 +101,7 @@
 
           var layout = {
             grid: { rows: 9, columns: 2, pattern: "independent" },
+            barmode: "overlay",
             legend: {
               bgcolor: "rgba(0,0,0,0.15)",
               font: {
