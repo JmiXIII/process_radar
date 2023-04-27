@@ -10,12 +10,12 @@
 
   <body>
     <!-- Create a container element for the chart -->
-    <div id="myDiv2" style="position: relative"></div>
+    <div id="myDiv2" style="position: relative; height: 100vh"></div>
 
     <script>
       // Wait for the Grist API to be ready
       grist.ready({
-        columns: ["Perf", "KPI", "Target",'Color'],
+        columns: ["Perf", "KPI", "Target", "Color"],
         requiredAccess: "read table",
       });
 
@@ -61,7 +61,7 @@
         // );
         if (mapped) {
           // mJson = mapped Json from mapped column
-          let mPerfs = mapped.map(({ KPI, Perf, Target, Color}) => ({
+          let mPerfs = mapped.map(({ KPI, Perf, Target, Color }) => ({
             KPI,
             Perf,
             Target,
@@ -79,7 +79,7 @@
               yaxis: "y" + i,
               type: "bar",
               orientation: "h",
-              width:0.5,
+              width: 0.5,
               marker: {
                 color: mPerf.Color,
               },
@@ -95,7 +95,7 @@
                 color: "rgba(184,184,184,0.6)",
               },
             };
-            data.push(targetTrace,perfTrace);
+            data.push(targetTrace, perfTrace);
             i++;
           }
 
