@@ -10,7 +10,7 @@
 
   <body>
     <!-- Create a container element for the chart -->
-    <div id="myDiv2" style="position: relative; height: 500px;"></div>
+    <div id="myDiv2" style="position: relative; height: 500px"></div>
 
     <script>
       // Wait for the Grist API to be ready
@@ -118,7 +118,12 @@
             },
           };
 
-          Plotly.newPlot("myDiv2", data, layout);
+          const config = {
+            displayModeBar: false, // this is the line that hides the bar.
+            responsive: true,
+          };
+
+          Plotly.newPlot("myDiv2", data, layout,config);
         } else {
           // Helper returned a null value. It means that not all
           // required columns were mapped.
