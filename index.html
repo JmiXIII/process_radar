@@ -10,7 +10,7 @@
 
   <body>
     <!-- Create a container element for the chart -->
-    <div id="myDiv2" style="position: relative; height: 1500px"></div>
+    <div id="myDiv2" style="position: relative"></div>
 
     <script>
       // Wait for the Grist API to be ready
@@ -84,9 +84,17 @@
 
           var layout = {
             grid: { rows: 9, columns: 2, pattern: "independent" },
+            legend: {
+              xanchor: "right",
+              yanchor: "top",
+              bgcolor: "rgba(0,0,0,0.15)",
+              font: {
+                size: 10,
+              },
+            },
           };
 
-          Plotly.newPlot("myDiv2", data,layout);
+          Plotly.newPlot("myDiv2", data, layout);
         } else {
           // Helper returned a null value. It means that not all
           // required columns were mapped.
