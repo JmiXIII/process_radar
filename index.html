@@ -73,15 +73,10 @@
           console.log(data);
 
           var layout = {
-            grid: { rows: 9, columns: 1, pattern: "independent" },
+            grid: { rows: 9, columns: 2, pattern: "independent" },
           };
 
-          const config = {
-            displayModeBar: false, // this is the line that hides the bar.
-            responsive: true,
-          };
-
-          Plotly.newPlot("myDiv2", data, layout, config);
+          Plotly.newPlot("myDiv2", data, layout);
         } else {
           // Helper returned a null value. It means that not all
           // required columns were mapped.
