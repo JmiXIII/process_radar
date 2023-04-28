@@ -47,7 +47,7 @@
 
               delta: { reference: 280, position: "top" },
               title: {
-                text: "<b>Profit</b><br><span style='color: gray; font-size:0.8em'>U.S. $</span>",
+                text: "N°"+i,
                 font: { size: 14 },
               },
               gauge: {
@@ -68,6 +68,7 @@
               },
             };
             data.push(trace);
+            i++;
           }
 
           console.log(data);
