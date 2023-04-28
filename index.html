@@ -19,11 +19,6 @@
         requiredAccess: "read table",
       });
 
-      const config = {
-        displayModeBar: false, // this is the line that hides the bar.
-        responsive: true,
-      };
-
       // When a new record is selected in the Grist table, render a chart based on its data
       grist.onRecords(function (records, mappings) {
         let mapped = grist.mapColumnNames(records);
@@ -80,7 +75,7 @@
           console.log(data);
 
           var layout = {
-            grid: { rows: 2, columns: 1, pattern: "independent" },
+            grid: { rows: 9, columns: 1, pattern: "independent" },
           };
 
           const config = {
