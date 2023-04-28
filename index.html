@@ -44,11 +44,11 @@
               type: "indicator",
               mode: "number+gauge+delta",
               value: 220,
-              domain: { row: i, column: 1 },
+              domain: { row: i, column: 0 },
 
               delta: { reference: 280, position: "top" },
               title: {
-                text: "N°"+i,
+                text: "N°" + i,
                 font: { size: 14 },
               },
               gauge: {
@@ -75,7 +75,13 @@
           console.log(data);
 
           var layout = {
-            grid: { rows: 9, columns: 2, pattern: "independent" },
+            grid: {
+              rows: 9,
+              columns: 2,
+              pattern: "independent",
+              xgap: 0.5,
+              ygap: 0.5,
+            },
           };
 
           Plotly.newPlot("myDiv2", data, layout);
