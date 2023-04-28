@@ -36,47 +36,47 @@
             Color,
           }));
 
-          // let data = [];
+          let data = [];
 
           let i = 1;
-          for (let mPerf of mPerfs) {}
-            var data = [
-              {
-                type: "indicator",
-                mode: "number+gauge+delta",
-                value: 220,
+          for (let mPerf of mPerfs) {
+          }
+          var trace = {
+            type: "indicator",
+            mode: "number+gauge+delta",
+            value: 220,
 
-                delta: { reference: 280, position: "top" },
-                title: {
-                  text: "<b>Profit</b><br><span style='color: gray; font-size:0.8em'>U.S. $</span>",
-                  font: { size: 14 },
+            delta: { reference: 280, position: "top" },
+            title: {
+              text: "<b>Profit</b><br><span style='color: gray; font-size:0.8em'>U.S. $</span>",
+              font: { size: 14 },
+            },
+            gauge: {
+              shape: "bullet",
+              axis: { range: [null, 300] },
+              threshold: {
+                line: {
+                  color: "red",
+                  width: 2,
+                  gradient: { yanchor: "vertical" },
                 },
-                gauge: {
-                  shape: "bullet",
-                  axis: { range: [null, 300] },
-                  threshold: {
-                    line: {
-                      color: "red",
-                      width: 2,
-                      gradient: { yanchor: "vertical" },
-                    },
-                    thickness: 0.75,
-                    value: 270,
-                  },
-                  bgcolor: "white",
-                  steps: [{ range: [0, 150], color: "cyan" }],
-                  bar: { color: "darkblue" },
-                },
+                thickness: 0.75,
+                value: 270,
               },
-            ];
-            // data.push(trace);
+              bgcolor: "white",
+              steps: [{ range: [0, 150], color: "cyan" }],
+              bar: { color: "darkblue" },
+            },
+          };
+          // ;
+          data.push(trace);
 
           console.log(data);
 
           var layout = {
             grid: { rows: 9, columns: 1, pattern: "independent" },
-            width:800,
-            heigh:800,
+            width: 800,
+            heigh: 800,
           };
 
           const config = {
