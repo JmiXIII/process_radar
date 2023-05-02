@@ -43,7 +43,7 @@
               columns: 1,
               pattern: "coupled",
               xgap: 0.5,
-              ygap: 2,
+              ygap: 1,
             },
           };
           let i = 1;
@@ -54,7 +54,9 @@
               title: { text: mPerf.KPI, font: { size: 11 } },
               type: "indicator",
               mode: "gauge+number+delta",
-              reference: mPerf.Target,
+              delta: {
+                reference: mPerf.Target,
+              },
               gauge: {
                 shape: "bullet",
                 bar: { color: mPerf.Color },
