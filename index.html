@@ -90,7 +90,7 @@
               columns: 1,
               pattern: "coupled",
               xgap: 0.5,
-              ygap: 0.5,
+              ygap: 2,
             },
           };
           let i = 1;
@@ -106,6 +106,9 @@
                 bar: { color: "purple" },
                 // axis: { range: [null, mPerf.Target] },
               },
+              threshold:{
+                value:mPerf.Target,
+              }
             };
             data.push(trace);
             i++;
