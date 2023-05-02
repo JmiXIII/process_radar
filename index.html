@@ -89,22 +89,22 @@
               rows: 10,
               columns: 1,
               pattern: "coupled",
-              xgap: 1,
-              ygap: 1,
+              xgap: 0.5,
+              ygap: 0.5,
             },
           };
           let i = 1;
           for (let mPerf of mPerfs) {
             let trace = {
               domain: { row: i, column: 0 },
-              value: mPerf.Perf,
-              title: { text: " TITLE" },
+              value: 450,
+              title: { text: mPerf.KPI },
               type: "indicator",
               mode: "gauge+number",
               gauge: {
                 shape: "bullet",
-                bar: { color: mPerf.Color },
-                axis: { range: [null, mPerf.Target] },
+                bar: { color: "purple" },
+                axis: { range: [null, 500] },
               },
             };
             data.push(trace);
