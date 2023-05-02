@@ -89,8 +89,8 @@
               rows: 10,
               columns: 1,
               pattern: "coupled",
-              xgap: 0.5,
-              ygap: 0.5,
+              xgap: 1,
+              ygap: 1,
             },
           };
           let i = 1;
@@ -112,16 +112,6 @@
           }
 
           console.log("############## ->", data);
-
-          // var layout = {
-          //   grid: {
-          //     rows: 9,
-          //     columns: 1,
-          //     pattern: "coupled",
-          //     xgap: 0.5,
-          //     ygap: 0.5,
-          //   },
-          // };
 
           Plotly.newPlot("myDiv", data, layout);
         } else {
