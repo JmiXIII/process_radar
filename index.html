@@ -62,6 +62,8 @@
               mode: "gauge+number+delta",
               delta: {
                 reference: mPerf.Target,
+                font: { size: 14,color:mPerf.Color },
+
               },
               gauge: {
                 shape: "bullet",
@@ -69,7 +71,7 @@
                 // axis: { range: [null, mPerf.Target] },
                 threshold: {
                   value: mPerf.Target,
-                  line:{color:"red",}
+                  line: { color: "red" },
                 },
               },
             };
