@@ -46,7 +46,7 @@
               ygap: 100,
             },
             margin: {
-              l: 300,
+              l: 200,
               r: 5,
               t: 5,
               pad: 0,
@@ -57,7 +57,7 @@
             let trace = {
               domain: { row: i, column: 0 },
               value: mPerf.Perf,
-              title: { text: mPerf.KPI, font: { size: 11 } },
+              title: { text: mPerf.KPI, font: { size: 14 } },
               type: "indicator",
               mode: "gauge+number+delta",
               delta: {
@@ -69,6 +69,7 @@
                 // axis: { range: [null, mPerf.Target] },
                 threshold: {
                   value: mPerf.Target,
+                  line:{color:"red",}
                 },
               },
             };
