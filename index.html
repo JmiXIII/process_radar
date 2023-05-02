@@ -74,9 +74,10 @@
             };
             data.push(trace);
             i++;
+            console.log ("count -->",i,nb)
           }
 
-          console.log("############## ->", data,i,nb);
+          console.log("############## ->", data);
 
           Plotly.newPlot("myDiv", data, layout);
         } else {
