@@ -101,13 +101,17 @@
               title: { text: " TITLE" },
               type: "indicator",
               mode: "gauge+number",
-              gauge: { shape: "bullet", axis: { range: [null, 500] } },
+              gauge: {
+                shape: "bullet",
+                bar: { color: mPerf.Color },
+                axis: { range: [null, mPerf.Target] },
+              },
             };
             data.push(trace);
             i++;
           }
 
-          console.log("############## ->",data);
+          console.log("############## ->", data);
 
           // var layout = {
           //   grid: {
