@@ -43,8 +43,8 @@
               r: 5,
               t: 5,
             },
-            width : 650,
-            height : 650,
+            width: 650,
+            height: 650,
           };
           let i = 1;
           for (let mPerf of mPerfs) {
@@ -55,7 +55,10 @@
                 y: [(2 * i - 1) / (2 * nb + 1), (2 * i - 0.5) / (2 * nb + 1)],
               },
               value: mPerf.Perf,
-              title: { text: mPerf.KPI, font: { size: 14 } },
+              title: {
+                text: "<b>" + mPerf.KPI + "<b><br> Objectif " + mPerf.Target,
+                font: { size: 12 },
+              },
               type: "indicator",
               mode: "gauge+number+delta",
               number: {
@@ -64,14 +67,13 @@
               delta: {
                 reference: mPerf.Target,
                 font: { size: 12, color: "rgb(0,0,0)" },
-                delta:{
-                  decreasing :{
-                    color:"rgb(0,0,0)"
-                  },
-                  increasing :{
-                    color:"rgb(0,0,0)"
-                  }
-                }
+
+                decreasing: {
+                  color: "rgb(0,0,0)",
+                },
+                increasing: {
+                  color: "rgb(0,0,0)",
+                },
               },
               gauge: {
                 shape: "bullet",
