@@ -36,61 +36,13 @@
             Color,
           }));
 
-          // let data = [
-          //   {
-          //     domain: { row: 0, column: 0 },
-          //     value: 450,
-          //     title: { text: "ONE LONG TITLE" },
-          //     type: "indicator",
-          //     mode: "gauge+number",
-          //     gauge: { shape: "bullet", axis: { range: [null, 500] } },
-          //   },
-          //   {
-          //     domain: { row: 0, column: 1 },
-          //     value: 450,
-          //     title: { text: "TWO" },
-          //     type: "indicator",
-          //     mode: "gauge+number",
-          //     gauge: {
-          //       shape: "bullet",
-          //       bar: { color: "red" },
-          //       axis: { range: [null, 500] },
-          //     },
-          //   },
-          //   {
-          //     domain: { row: 1, column: 0 },
-          //     value: 450,
-          //     title: { text: "THREE" },
-          //     type: "indicator",
-          //     mode: "gauge+number",
-          //     gauge: {
-          //       shape: "bullet",
-          //       bar: { color: "blue" },
-          //       axis: { range: [null, 500] },
-          //     },
-          //   },
-          //   {
-          //     domain: { row: 1, column: 1 },
-          //     value: 450,
-          //     title: { text: "FOUR" },
-          //     type: "indicator",
-          //     mode: "gauge+number",
-          //     gauge: {
-          //       shape: "bullet",
-          //       bar: { color: "purple" },
-          //       axis: { range: [null, 500] },
-          //     },
-          //   },
-          // ];
-
           let data = [];
           var layout = {
             grid: {
               rows: 10,
               columns: 1,
               pattern: "coupled",
-              xgap: 0.5,
-              ygap: 2,
+              ygap: 1,
             },
           };
           let i = 1;
