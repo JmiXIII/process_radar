@@ -37,15 +37,7 @@
           }));
 
           let data = [];
-          var layout = {
-            margin: {
-              l: 200,
-              r: 5,
-              t: 5,
-            },
-            width: 650,
-            height: 650,
-          };
+
           let i = 1;
           for (let mPerf of mPerfs) {
             let nb = mPerfs.length;
@@ -90,6 +82,16 @@
             i++;
             console.log("count -->", i, nb);
           }
+
+          var layout = {
+            margin: {
+              l: 200,
+              r: 5,
+              t: 5,
+            },
+            height: round(nb*9/650),
+            width: 650,
+          };
 
           console.log("############## ->", data);
 
