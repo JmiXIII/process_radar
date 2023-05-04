@@ -30,12 +30,13 @@
         // );
         if (mapped) {
           // mJson = mapped Json from mapped column
-          let mPerfs = mapped.map(({ KPI, Perf, Target, Color, Date }) => ({
+          let mPerfs = mapped.map(({ KPI, Perf, Target, Color, Date,Unit }) => ({
             KPI,
             Perf,
             Target,
             Color,
             Date,
+            Unit
           }));
 
           let data = [];
@@ -54,7 +55,7 @@
                   "<b>" +
                   mPerf.KPI +
                   "</b><br>"+mPerf.Date+" | <i> Objectif <i> " +
-                  Math.round(mPerf.Target * 100) / 100,
+                  Math.round(mPerf.Target * 100) / 100+""+mPerf.Unit,
                 font: { size: 12 },
               },
               type: "indicator",
