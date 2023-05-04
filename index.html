@@ -10,8 +10,7 @@
 
   <body>
     <!-- Create a container element for the chart -->
-    <h3>Consolidation KPI SAMAT sur 12 mois glissant</h3>
-    <h4 id="date"></h4>
+    <h2>Consolidation KPI SAMAT sur 12 mois glissant</h2>
     <div id="myDiv"></div>
 
     <script>
@@ -39,9 +38,6 @@
             Date,
           }));
 
-          document.getElementById("date").innerHTML =
-            "12 mois glissant à partir du " + Math.min(mPerfs.Date);
-
           let data = [];
           let i = 1;
           var nb = mPerfs.length;
@@ -57,10 +53,8 @@
                 text:
                   "<b>" +
                   mPerf.KPI +
-                  "</b><br><i> Objectif<i> " +
-                  Math.round(mPerf.Target * 100) / 100 +
-                  "<br>" +
-                  mPerf.Date,
+                  "</b><br>"+mPerf.Date+" | <i> Objectif <i> " +
+                  Math.round(mPerf.Target * 100) / 100,
                 font: { size: 12 },
               },
               type: "indicator",
