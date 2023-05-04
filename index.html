@@ -10,12 +10,14 @@
 
   <body>
     <!-- Create a container element for the chart -->
+    <h3>Consolidation KPI SAMAT sur 12 mois glissant</h3>
+    <h4 id="date"></h4>
     <div id="myDiv"></div>
 
     <script>
       // Wait for the Grist API to be ready
       grist.ready({
-        columns: ["Perf", "KPI", "Target", "Color"],
+        columns: ["Perf", "KPI", "Target", "Color", "Date"],
         requiredAccess: "read table",
       });
 
@@ -29,17 +31,21 @@
         // );
         if (mapped) {
           // mJson = mapped Json from mapped column
-          let mPerfs = mapped.map(({ KPI, Perf, Target, Color }) => ({
+          let mPerfs = mapped.map(({ KPI, Perf, Target, Color, Date }) => ({
             KPI,
             Perf,
             Target,
             Color,
+            Date,
           }));
 
-          let data = [];
+          document.getElementById("date").innerHTML =
+            "12 mois glissant à partir du " + Math.min(mPerfs.Date);
 
+          let data = [];
           let i = 1;
           var nb = mPerfs.length;
+
           for (let mPerf of mPerfs) {
             let trace = {
               domain: {
@@ -48,7 +54,13 @@
               },
               value: mPerf.Perf,
               title: {
-                text: "<b>" + mPerf.KPI + "</b><br><i> Objectif<i> " + Math.round(mPerf.Target*100)/100,
+                text:
+                  "<b>" +
+                  mPerf.KPI +
+                  "</b><br><i> Objectif<i> " +
+                  Math.round(mPerf.Target * 100) / 100 +
+                  "<br>" +
+                  mPerf.Date,
                 font: { size: 12 },
               },
               type: "indicator",
